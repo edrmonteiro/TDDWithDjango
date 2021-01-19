@@ -7,4 +7,5 @@ class HomePageTest(TestCase):
         response = self.client.get('/')
         self.assertTrue(response.content.decode().startswith('<html>'))
         self.assertIn ('<title>To-Do Lists</title>', response.content.decode())
-        self.assertTrue(response.content.decode().endswith('</html>'))
+        self.assertTrue(response.content.decode().strip().endswith('</html>'),
+        f'html did not end correctly. was: {response.content}')

@@ -11,7 +11,8 @@ class HomePageTest(unittest.TestCase):
     def test_home_page(self):
         self.browser.get('http://localhost:8000')
         self.assertIn ('To-Do', self.browser.title)
-        header = self.browser.find_element_by_Tag_name('h1')
+        header = self.browser.find_element_by_tag_name('html')
+        print('header.text=>', header.text)
         self.assertIn('To-Do', header.text)
 
 
